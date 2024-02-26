@@ -8,11 +8,17 @@ function App() {
   const [selectedPrice, setSelectedPrice] = useState("Choose a price");
 
   const getProducts = async () => {
+  
     const result = await fetch("https://fakestoreapi.com/products");
     const receivedProducts = await result.json();
-    setProducts(receivedProducts);
-    setShowingProducts(receivedProducts)
-    console.log("getProducts runned!");
+    
+    // This is just for showing "Loading spinner"
+    setTimeout(() => {  
+      setProducts(receivedProducts);
+      setShowingProducts(receivedProducts)
+      console.log("getProducts runned!");
+    }, 4000);
+   
   };
 
   useEffect(() => {
