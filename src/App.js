@@ -67,16 +67,18 @@ function App() {
     setSelectedCategory("Choose a category");
     setSelectedPrice("Choose a price");
     setShowingProducts(products);
+    console.log("All filters deleted!")
   };
 
   return (
     <div className="App mt-5">
       <button onClick={getProducts}>Fetch</button>
-      <button onClick={() => console.log(products)}>State</button>
-      <button onClick={() => console.log(showingProducts)}>Show</button>
+      <button onClick={() => console.log(products)}>log All products</button>
+      {/* <button onClick={() => console.log(showingProducts)}>Show</button> */}
       <button onClick={sortByRatingDescending}>Sort by Rating (High to Low)</button>
       <button onClick={sortByPriceDescending}>Sort by Price (High to Low)</button>
       <button onClick={resetFilters}>Reset Filters</button>
+      <a href="https://github.com/seyedehsandev/challenge1/" target='_blank' className='bg-red-800 text-white px-4 py-3 rounded-xl'>Repo</a>
       <br /><hr className='mt-5'/>
 
       <form className="max-w-sm mx-5 sm:mx-auto">
@@ -93,7 +95,7 @@ function App() {
           <option value="men's clothing">Men's Clothing</option>
           <option value="women's clothing">Women's Clothing</option>
           <option value="electronics">Electronics</option>
-          {/* Add more categories as needed */}
+          <option value="jewelery">Jewelery</option>
         </select>
 
         <label htmlFor="prices" className="block mt-4 mb-2 text-sm font-medium text-gray-900 dark:text-white">
